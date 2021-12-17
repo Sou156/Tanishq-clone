@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./header.css">
     <style>
         #container{
             width: 98%;
@@ -20,6 +21,7 @@
         width: 98%;
         height: 15%;
         border: 1px solid green;
+        margin-top: 10px;
         }
         #product{
         display: flex;    
@@ -183,7 +185,7 @@
             color: white;
         }
         #Promo{
-            width: 280px;
+            width: 300px;
             height: 50px;
             border: none;
             background-color: #F6F6F6;
@@ -194,6 +196,28 @@
             background-color: black;
             color: white;
         }
+        #sideDiv{
+            display: flex;
+            /* grid-template-columns: repeat(2,200px); */
+            width: 100%;
+            height:250px ;
+            border: 1px solid red;
+        }
+        .sideDives{
+            border: 1px solid green ;
+            width: 50%;
+
+        }
+        #checkout{
+            margin-top: 80px;
+            width: 100%;
+            height: 50px;
+            background-color: black;
+            color: white;
+        }
+        p{
+            padding-top: 8px;
+        }
     </style>
 </head>
 <body>
@@ -201,7 +225,7 @@
         <div id="navbar"></div>
         <div id="product">
             <div id="item">
-                <h1 class="head">CART ITEMS :</h1>
+                <h1 id="head1" class="head"></h1>
                 <table>
                     <thead id="thead">
                         <tr>
@@ -218,7 +242,13 @@
                 <h1 id="head2" class="head">ORDER SUMMERY</h1>
                 <input id="Promo" type="text">
                 <button id="promobtn">Apply</button>
-                <p id="priceTotal"></p>
+                <div id="sideDiv">
+                    <div id="sidediv1" class="sideDives"></div>
+                    <div id="sidediv2" class="sideDives"></div>
+                    
+                </div>
+                <button id="checkout">PROCEED TO CHECKOUT</button>
+                <!-- <p id="priceTotal"></p> -->
                 
             </div>
         </div>
@@ -229,10 +259,14 @@
     </div>
 </body>
 </html>
-<script>
+<script type = "module">
+     import navbar from "./header.js"
+    var Navbar = document.getElementById("navbar")
+    Navbar.innerHTML = navbar()
     var CartArr = JSON.parse(localStorage.getItem("cart")) || [];
     var tbody = document.getElementById("tbody")
     var orderDiv = document.getElementById("order")
+    var CartTotal = CartArr.length
     ShowData(CartArr)
     console.log(CartArr)
     function ShowData(CartArr){
@@ -245,6 +279,9 @@
       var detailsDiv  = document.createElement("div")
       detailsDiv.setAttribute("id","detailsDiv")
       var imgdiv = document.createElement("div")
+     var hCart = document.getElementById("head1")
+     hCart.innerHTML = "CART: " + CartTotal + " ITEM"
+     hCart.style.fontSize = "28px"
       var img = document.createElement("img")
       img.src = item.image
       img.setAttribute("id","prodImg")
@@ -274,7 +311,7 @@
           RemoveItem()
       })
 
-      radioDiv = document.createElement("div")
+     var radioDiv = document.createElement("div")
       var checkbox = document.createElement("input")
       checkbox.type="checkbox"
       checkbox.setAttribute("id","checkbox")
@@ -288,7 +325,7 @@
       bottomDiv.setAttribute("id","bottomDiv")
       var shipping = document.createElement("h2")
       shipping.innerHTML = "Shipping Method:"
-      Homebox = document.createElement("div")
+     var Homebox = document.createElement("div")
       Homebox.innerHTML = "HOME DELIVERY"
       Homebox.setAttribute("id","Homebox")
       var Delivery = document.createElement("div")
@@ -332,14 +369,8 @@
       pincode.setAttribute("class","innerDiv")
       pincode.append(pincodeText,pincodeBox)
       
-      var CartTotal = CartArr.length
-    var CartPrice = CartArr.reduce(function(acc,cur){
-          return acc + cur.newPrice
-      },0)
-   
-     var priceTotal = document.getElementById("priceTotal")
-     priceTotal.innerText = `ORDER TOTAL (${CartTotal} ITEMS) ` + '  ' +  "₹" + CartPrice
-      orderDiv.append(priceTotal)
+     
+    
       detailsDiv.append(name,id,price,p1,p2,wishlist)
       imgdiv.append(img)
       div1.append(imgdiv,detailsDiv)
@@ -360,6 +391,63 @@
         localStorage.setItem("cart",JSON.stringify(CartArr))
         ShowData(CartArr)
     }
+    var sum;
+     function applyPromo(){
+        var discount = CartArr.reduce(function(acc,cv){
+              sum = (CartPrice * 30) / 100;
+             if (promocode.value == "Tanishq30"){
+                return (CartPrice - sum )
+             }else {
+                 return (CartPrice)
+             }
+               
+            
+            
+        },0)
+        pTotal.innerHTML =  "₹" + discount
+        PricePay.innerHTML = "₹" + discount
+        if (promocode.value == "Tanishq30"){
+        pDiscount.innerText = "₹" + sum
+             }
+    }
+    
+    var CartPrice = CartArr.reduce(function(acc,cur){
+          return acc + cur.newPrice
+      },0)
+     var sideDiv = document.getElementById("sideDiv")
+     
+     var sideDiv1 = document.getElementById("sidediv1")
+     
+     var sideDiv2 = document.getElementById("sidediv2")
+    
+     var priceTotal = document.createElement("p")
+     priceTotal.innerText = `ORDER TOTAL (${CartTotal} ITEMS) ` 
+     var pTotal = document.createElement("h3")
+     pTotal.innerHTML =  "₹" + CartPrice
+     var Oshipping = document.createElement("p")
+     Oshipping.innerHTML = "SHIPPING"
+     var free = document.createElement("h2")
+     free.innerText = "FREE"
+     var Tdiscount = document.createElement("p")
+     Tdiscount.innerText = "DISCOUNT"
+     var promocode = document.getElementById("Promo")
+     document.getElementById("promobtn").addEventListener("click",function(){
+        applyPromo()
+     })
+     var pDiscount = document.createElement("h3")
+     pDiscount.innerText = "₹" + 0
+     var PricePay = document.createElement("h2")
+     PricePay.innerHTML = CartPrice
+    
+   
+     var pay = document.createElement("h2")
+     pay.innerText = "YOU PAY"
+     var tax = document.createElement("h4")
+     tax.innerText = "INCLUSIVE OF ALL TAXES*"
+     sideDiv1.append(priceTotal,Oshipping,Tdiscount,pay,tax)
+     sideDiv2.append(pTotal,free,pDiscount,PricePay)
+    //   sideDiv.append(sideDiv1,sideDiv2)
+    //   orderDiv.append(sideDiv)
    
    
 </script>
