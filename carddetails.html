@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Payment Page . Razorpay</title>
     <link rel="stylesheet" href="carddetails.css">
 </head>
 <body>
@@ -27,12 +27,45 @@
                 <br>
                 <button  id="debitcard">Credit/Debit Card</button>
                 <br>
+                <hr>
                 <button id="netbanking">Netbanking</button>
                 <br>
+                <hr>
                 <button id="wallet">Wallet</button>
             </div>
-            <div id="right"></div>
+            <div  id="right">
+                <h3>pay with credit/Debit card</h3>
+                <label for="">Card Number</label>
+                <br>
+                <input id="input" type="number" placeholder="Enter card number">
+                <br>
+                <br>
+                <div id="expiry-cvv-div">
+                    <label for="">Expiry Date</label>
+                    <input id="input-exp" type="" placeholder="MM/YY">
+                    <br>
+                    <label for="">CVV</label> <br>
+                    <input id="input-cvv" type="password" name="" id="" placeholder="***">
+                    <br>
+                </div>
+                    <br>
+                    <label for="">Cardholder's Name</label>
+                    <br>
+                    <input id="input" type="text" name="" id="">
+                    <br>
+
+                    <button id="paynow">PAY NOW</button>
+                    <br>
+                    <button id="cancelpay">Cancel Payment</button>
+                    <br>
+                    <div id="poweredby">
+                    <a href="https://razorpay.com/">powered by <img id="razorpay-img" src="https://cdn.razorpay.com/logo.svg" alt=""></a>
+                    </div>
+                
+            </div>
         </div>
     </div>
 </body>
 </html>
+
+<script src="carddetails.js"></script>

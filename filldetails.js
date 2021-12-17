@@ -6,5 +6,9 @@ document.getElementById("btn").addEventListener('click',btnfunction)
    location.href = "carddetails.html"
   
  }
+ document.getElementById("logo").addEventListener("click",logofunction);
 
+ function logofunction() {
+    location.href = "homepage.html";
+ }
  

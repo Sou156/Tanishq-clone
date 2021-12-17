@@ -6,7 +6,7 @@ location.href = "filldetails.html"
    document.getElementById("logo").addEventListener("click",logofunction);
 
    function logofunction() {
-      location.href = "home.html";
+      location.href = "homepage.html";
    }
 
 

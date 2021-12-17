@@ -1,3 +1,4 @@
-document.getElementById("debitcard").addEventListener("click",function(){
-console.log('soba')
+document.getElementById("paynow").addEventListener("click",function(){
+
+    location.href ="otp.html"
 });

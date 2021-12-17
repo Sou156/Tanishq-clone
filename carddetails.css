@@ -7,19 +7,24 @@
     text-decoration: none;
     line-height: 230%;
     margin-left: 5px;
+    
+}
+body{
+    background-color: whitesmoke;
 }
 #brown{
-    border: 1px solid greenyellow;
+    
     background-color: #b0a16e;
     height: 150px;
 
 }
 #white{
-    border: 1px solid red;
-    width: 70%;
+    background-color: white;
+    width: 60%;
     height: 550px;
     margin:auto;
     display: flex;
+    
 }
 #logo{
     /* border: 1px solid red; */
@@ -31,18 +36,21 @@
 #logo-id{
     height: 60px;
     width: 100px
+   
 }
 #left{
-    border: 1px solid rgb(143, 29, 48);
+    padding-top: 20px;
+    padding-left: 5px;
+    padding-right: 20px;
     width: 50%;
     height: 550px;
     margin-left: 0px;
 }
 #right{
-    border: 1px solid rgb(143, 29, 48);
+    
     width: 50%;
     height: 550px;
-    margin-left: 0px;
+    padding-top: 20px;
 }
 #debitcard{
     padding: 10px;
@@ -50,6 +58,7 @@
     text-align: left;
     margin-left: 0px;
     border-color: transparent;
+    cursor: pointer;
 }
 #netbanking{
     padding: 10px;
@@ -57,6 +66,7 @@
     text-align: left;
     margin-left: 0px;
     border-color: transparent;
+    cursor: pointer;
 }
 #wallet{
     padding: 10px;
@@ -64,4 +74,56 @@
     text-align: left;
     margin-left: 0px;
     border-color: transparent;
+    cursor: pointer;
+}
+
+#expiry-cvv-div{
+    display: flex;
+    
+}
+#input{
+    width: 92%;
+    border-color: transparent;
+    background-color: rgb(240, 238, 236);
+}
+#input-cvv{
+    width: 12%;
+    border-color: transparent;
+    background-color: rgb(240, 238, 236);
+}
+#input-exp{
+    width: 12%;
+    border-color: transparent;
+    background-color: rgb(240, 238, 236);
+}
+#paynow{
+    margin-top: 40px;
+  padding: 6px;
+  width: 92%;
+  background-color:#b0a16e;
+  border-color: transparent;
+  cursor: pointer;
+}
+#cancelpay{
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 20px;
+    padding: 6px;
+    width: 92%;
+    color: #b0a16e;
+    background-color: transparent;
+    border-color: transparent;
+}
+a{
+    
+    margin-top: 0px;
+    margin-left: 180px;
+    cursor: pointer;
+}
+#razorpay-img{
+   
+    width: 20%;
+    height: 20px;
+    margin-top: 20px;
+   
 }
