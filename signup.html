@@ -690,3 +690,50 @@ clear: both;
      </fieldset>
 </body>
 </html>
+<script>
+    function regsiterClick(){
+    let title =document.getElementById("title1").value;
+   let f_name=document.getElementById("firstname").value;
+   let l_name=document.getElementById("lastname").value;
+   let mob_num=document.getElementById("mobnumber").value;
+   let email=document.getElementById("email").value;
+   let password=document.getElementById("password").value;
+   let checkdon=document.getElementById("checkboxid").checked;
+  //   console.log(title,f_name,l_name,mob_num,email,password)
+
+
+  let userdata =new Array();
+
+  userdata=JSON.parse(localStorage.getItem("projectuserdata"))?JSON.parse(localStorage.getItem("projectuserdata")):[];
+  userdata.push( {
+    title:title,
+    first_name:f_name,
+    last_name:l_name,
+    mobile:mob_num,
+    email:email,
+    password:password,
+    checkdon:checkdon,
+}) 
+    console.log(userdata)
+
+       if(title.trim()=="" || f_name.trim()=="" || l_name.trim()=="" || mob_num.trim()=="" || email.trim()=="" || password.trim()=="" || checkdon==false){
+           alert("Please fill all the detail fields and check on checkbox")
+           let showerror =document.getElementById("showerror")
+           showerror.textContent="Please fill all the detail fields and check on checkbox";
+           showerror.style.color="red";
+           
+       }
+       else{
+          let showerror =document.getElementById("showerror")
+            showerror.textContent="SignUp Successfull"
+            showerror.style.color="green"
+          alert("Signup successfull")
+          window.location.href="login.html";
+          const userdata_projectjson=JSON.stringify(userdata);
+          localStorage.setItem("projectuserdata" ,userdata_projectjson)
+       }
+}
+
+
+
+</script>
