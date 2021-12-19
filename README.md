@@ -14,9 +14,13 @@ Tanishq is a brand of Jewellery retail stores in India. The brand is the propert
 
 
 Tech Stack :-
+
 HTML
+
 CSS
+
 JavaScript
+
 GIT
 
 
