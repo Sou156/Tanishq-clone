@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>OTP</title>
+    <link rel="shortcut icon" href="https://www.tanishq.co.in/favicon.png" type="image/png">
+
     <style>
         body{
             background-color: #b0a16e;
@@ -47,8 +49,15 @@
 </html>
 
 <script>
+
     document.getElementById('submit').addEventListener('click',function(){
-        alert("Your Payment was Sucessful and order has placed")
+        let passs = document.getElementById("pass").value
+        if(passs.length == 6 ){
+            alert("Your Payment was Sucessful and order has placed")
         location.href="homepage.html"
+        } 
+          else {
+              alert("Incorrect OTP")
+          }
     })
 </script>
