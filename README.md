@@ -14,6 +14,7 @@ Tanishq is a brand of Jewellery retail stores in India. The brand is the propert
 <hr>
 <h2>Presentation Video </h2>
 <a href="https://drive.google.com/drive/u/1/folders/1t4MarC3zG7Anf_R7elFdvChIvL28TiHf"<a>Demo Of Project</a>
+<hr>
 <h3>Tech Stack :- </h3>
 
 HTML
