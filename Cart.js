@@ -186,6 +186,7 @@ var CartPrice = CartArr.reduce(function(acc,cur){
  sideDiv2.append(pTotal,free,pDiscount,PricePay)
 //   sideDiv.append(sideDiv1,sideDiv2)
 //   orderDiv.append(sideDiv)
+var checkout =  document.getElementById("checkout").addEventListener("click",goToPay)
 function goToPay(){
-    window.location.href = "paymet.html"
+    window.location.href = "payment.html"
 }
