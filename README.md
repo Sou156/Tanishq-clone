@@ -24,9 +24,7 @@ JavaScript
 GIT
 
 
-
-
-<br>
+<hr>
 
 <h4>For more details 👎</h4>
 
