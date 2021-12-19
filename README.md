@@ -4,7 +4,11 @@ Tanishq-Web-Clone
 
 
 Welcome 👋
+
+
 About Tanishq:
+
+
 Tanishq is a brand of Jewellery retail stores in India. The brand is the property of Titan Company, which is back by Tata Group and TIDCO. The Stores are located all over India. Tanishq has emerged as India’s fastest growing jewellery brand and is a name which signifies superior craftsmanship, exclusive designs and superlative product quality.
 
 For more details 👎
