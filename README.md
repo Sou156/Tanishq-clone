@@ -29,4 +29,4 @@ GIT
 <h4>For more details 👎</h4>
 
 
-https://medium.com/@riyachatterjee403/cloning-tanishq-in-less-than-7-days-using-just-html-css-javascript-8f0ea753e466
+<a href="https://medium.com/@riyachatterjee403/cloning-tanishq-in-less-than-7-days-using-just-html-css-javascript-8f0ea753e466">Blog</a>
